@@ -22,3 +22,4 @@ Install Zshell using homebrew:
 ### Tmux
 
 Install Tmux using homebrew:
+`brew install tmux`
