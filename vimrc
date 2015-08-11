@@ -20,6 +20,9 @@ Plugin 'tpope/vim-commentary'
 " Align lines using :Tab"
 Plugin 'godlygeek/tabular'
 
+" Search by selecting text in visual mode and pressing * or #"
+Plugin 'nelstrom/vim-visual-star-search'
+
 call vundle#end()
 
 let SuperTabDefaultCompletionType = "context"
