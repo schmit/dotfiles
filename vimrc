@@ -7,14 +7,17 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ervandew/supertab'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'bling/airline.vim'
 call vundle#end()
 
 let SuperTabDefaultCompletionType = "context"
 let g:jedi#popup_on_dot = 0  " disables the autocomplete to popup whenever you press .
 
 syntax on
-
 syntax enable
+
+set laststatus=2
+set ttimeoutlen=50
 
 set background=dark
 colorscheme solarized
