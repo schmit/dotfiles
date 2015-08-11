@@ -5,13 +5,27 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+
+" Autocompleters "
 Plugin 'ervandew/supertab'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'bling/airline.vim'
+
+" Status bar "
+Plugin 'bling/vim-airline'
+
+" Commenting"
+" use gcc to comment a line "
+Plugin 'tpope/vim-commentary'
+
+" Align lines using :Tab"
+Plugin 'godlygeek/tabular'
+
 call vundle#end()
 
 let SuperTabDefaultCompletionType = "context"
 let g:jedi#popup_on_dot = 0  " disables the autocomplete to popup whenever you press .
+
+filetype plugin indent on
 
 syntax on
 syntax enable
