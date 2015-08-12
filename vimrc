@@ -23,6 +23,8 @@ Plugin 'godlygeek/tabular'
 " Search by selecting text in visual mode and pressing * or #"
 Plugin 'nelstrom/vim-visual-star-search'
 
+" Find files using Ctrl + p"
+Plugin 'kien/ctrlp.vim'
 call vundle#end()
 
 let SuperTabDefaultCompletionType = "context"
@@ -58,6 +60,9 @@ set noswapfile
 set nobackup
 set nowb
 
+" reload files when changed on disk
+set autoread
+
 " allow changes in buffer
 set hidden
 
@@ -85,3 +90,8 @@ set backspace=indent,eol,start
 
 " mouse support
 set mouse=a
+
+" Ctrl+p for ctrlp package
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
