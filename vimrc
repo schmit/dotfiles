@@ -23,6 +23,9 @@ Plugin 'godlygeek/tabular'
 " Search by selecting text in visual mode and pressing * or #"
 Plugin 'nelstrom/vim-visual-star-search'
 
+" Solarized theme
+Plugin 'altercation/vim-colors-solarized'
+
 " Find files using Ctrl + p"
 Plugin 'kien/ctrlp.vim'
 call vundle#end()
