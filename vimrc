@@ -95,3 +95,11 @@ set mouse=a
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" Copy-paste to OSX
+set clipboard=unnamed
+
+" more natural split and vsplit
+set splitbelow
+set splitright
+
+
