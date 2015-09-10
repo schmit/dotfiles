@@ -114,4 +114,8 @@ set clipboard=unnamed
 set splitbelow
 set splitright
 
+" Use F2 to switch to paste mode in order to paste
+" large amount of text. This turns off all smart indenting
+set pastetoggle=<F2>
+
 
