@@ -38,6 +38,8 @@ filetype plugin indent on
 syntax on
 syntax enable
 
+set modelines=0 " avoids exploit
+
 set laststatus=2
 set ttimeoutlen=50
 
@@ -46,7 +48,6 @@ colorscheme solarized
 
 set ruler
 set nowrap
-
 set smartindent
 set smarttab
 set shiftwidth=4
@@ -58,6 +59,9 @@ set autoindent
 set number
 set showcmd
 set showmode
+
+set ttyfast
+set visualbell
 
 set noswapfile
 set nobackup
