@@ -28,6 +28,11 @@ Plugin 'altercation/vim-colors-solarized'
 
 " Find files using Ctrl + p"
 Plugin 'kien/ctrlp.vim'
+
+" Ack plugin for vim, search using :Ack <searchterm>, select result
+" and use O to open file at that line and close search window (or o to not
+" close search window"
+Plugin 'mileszs/ack.vim'
 call vundle#end()
 
 let SuperTabDefaultCompletionType = "context"

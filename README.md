@@ -23,3 +23,9 @@ Install Zshell using homebrew:
 
 Install Tmux using homebrew:
 `brew install tmux`
+
+### Ack
+
+Install Ack using homebrew:
+`brew install ack`
+
