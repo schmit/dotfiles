@@ -33,6 +33,9 @@ Plugin 'kien/ctrlp.vim'
 " and use O to open file at that line and close search window (or o to not
 " close search window"
 Plugin 'mileszs/ack.vim'
+
+" Synax checking "
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 
 let SuperTabDefaultCompletionType = "context"
