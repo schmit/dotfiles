@@ -29,3 +29,9 @@ Install Tmux using homebrew:
 Install Ack using homebrew:
 `brew install ack`
 
+### Copy files to home directory
+
+```
+chmod +x install.sh
+./install.sh
+```
