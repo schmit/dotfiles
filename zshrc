@@ -80,15 +80,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH=~/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
-# iPython notebook
-alias ipyn="ipython notebook"
-
-# rbenv setup
-eval "$(rbenv init -)"
-
-# tmuxinator
-source ~/.bin/tmuxinator.zsh
-
 # set editor
 export EDITOR='vim'
 
