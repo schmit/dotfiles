@@ -36,6 +36,10 @@ Plugin 'mileszs/ack.vim'
 
 " Synax checking "
 Plugin 'scrooloose/syntastic'
+
+" Add parentheses etc around text "
+Plugin 'tpope/vim-surround'
+
 call vundle#end()
 
 let SuperTabDefaultCompletionType = "context"
