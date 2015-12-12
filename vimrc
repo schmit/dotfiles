@@ -40,6 +40,15 @@ Plugin 'scrooloose/syntastic'
 " Add parentheses etc around text "
 Plugin 'tpope/vim-surround'
 
+" Writing plugin "
+Plugin 'reedes/vim-pencil'
+
+"Markdown plugin "
+Plugin 'plasticboy/vim-markdown'
+
+"Latex plugin "
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+
 call vundle#end()
 
 let SuperTabDefaultCompletionType = "context"
@@ -57,6 +66,7 @@ set ttimeoutlen=50
 
 set background=dark
 colorscheme solarized
+" colorscheme Tomorrow-Night
 
 set ruler
 set nowrap
@@ -125,4 +135,30 @@ set splitright
 " large amount of text. This turns off all smart indenting
 set pastetoggle=<F2>
 
+" Allow math in markdown
+let g:vim_markdown_math=1
+" No folding in markdown
+let g:vim_markdown_folding_disabled=1
 
+" Setup for vim-pencil
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd, md   call pencil#init()
+  autocmd FileType text               call pencil#init()
+  autocmd FileType tex                call pencil#init()
+augroup END
+
+" Setup writer mode using :WP
+func! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  map j gj
+  map k gk
+  setlocal spell spelllang=en_us
+  set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
+  set complete+=s
+  set formatprg=par
+  setlocal wrap
+  setlocal linebreak
+endfu
+com! WP call WordProcessorMode()
