@@ -143,7 +143,7 @@ let g:vim_markdown_folding_disabled=1
 " Setup for vim-pencil
 augroup pencil
   autocmd!
-  autocmd FileType markdown,mkd, md   call pencil#init()
+  autocmd FileType markdown,mkd,md    call pencil#init()
   autocmd FileType text               call pencil#init()
   autocmd FileType tex                call pencil#init()
 augroup END
