@@ -140,14 +140,6 @@ let g:vim_markdown_math=1
 " No folding in markdown
 let g:vim_markdown_folding_disabled=1
 
-" Setup for vim-pencil
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd,md    call pencil#init()
-  autocmd FileType text               call pencil#init()
-  autocmd FileType tex                call pencil#init()
-augroup END
-
 " Setup writer mode using :WP
 func! WordProcessorMode()
   setlocal formatoptions=1
