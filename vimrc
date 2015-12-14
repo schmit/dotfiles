@@ -154,3 +154,7 @@ func! WordProcessorMode()
   setlocal linebreak
 endfu
 com! WP call WordProcessorMode()
+
+" Turn off smart indent for python
+au! FileType python setl nosmartindent
+
