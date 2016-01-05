@@ -25,6 +25,8 @@ Plugin 'nelstrom/vim-visual-star-search'
 
 " Solarized theme
 Plugin 'altercation/vim-colors-solarized'
+" Tomorrow night theme
+" Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " Find files using Ctrl + p"
 Plugin 'kien/ctrlp.vim'
@@ -48,6 +50,9 @@ Plugin 'plasticboy/vim-markdown'
 
 "Latex plugin "
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
+
+"Elm plugin "
+Plugin 'lambdatoast/elm.vim'
 
 call vundle#end()
 
