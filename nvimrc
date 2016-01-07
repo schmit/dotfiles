@@ -1,65 +1,63 @@
-set nocompatible
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
+call plug#begin('~/.nvim/plugged')
+Plug 'gmarik/Vundle.vim'
+Plug 'tpope/vim-fugitive'
 
 " Autocompleters "
-Plugin 'ervandew/supertab'
-Plugin 'davidhalter/jedi-vim'
+Plug 'ervandew/supertab'
+Plug 'davidhalter/jedi-vim'
 
 " Status bar "
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
 " Commenting"
 " use gcc to comment a line "
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
+
+" Adjust shiftwidth and expandtab heuristically
+Plug 'tpope/vim-sleuth'
+
+" Add parentheses etc around text "
+Plug 'tpope/vim-surround'
 
 " Align lines using :Tab"
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
 " Search by selecting text in visual mode and pressing * or #"
-Plugin 'nelstrom/vim-visual-star-search'
+Plug 'nelstrom/vim-visual-star-search'
 
 " Solarized theme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 " Tomorrow night theme
-" Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+" Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " Find files using Ctrl + p"
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Ack plugin for vim, search using :Ack <searchterm>, select result
 " and use O to open file at that line and close search window (or o to not
 " close search window"
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 
 " Synax checking "
-Plugin 'scrooloose/syntastic'
-
-" Add parentheses etc around text "
-Plugin 'tpope/vim-surround'
+Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'css'] }
 
 " Writing plugin "
-Plugin 'reedes/vim-pencil'
+" Plug 'reedes/vim-pencil'
 
 "Markdown plugin "
-Plugin 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 "Latex plugin "
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'LaTeX-Box-Team/LaTeX-Box' { 'for': 'tex' }
 
 "Elm plugin "
-Plugin 'lambdatoast/elm.vim'
+Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 
-call vundle#end()
+call plug#end()
 
 let SuperTabDefaultCompletionType = "context"
 let g:jedi#popup_on_dot = 0  " disables the autocomplete to popup whenever you press .
-
-filetype plugin indent on
 
 syntax on
 syntax enable
