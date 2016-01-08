@@ -49,7 +49,7 @@ Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'css'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 "Latex plugin "
-Plug 'LaTeX-Box-Team/LaTeX-Box' { 'for': 'tex' }
+Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
 
 "Elm plugin "
 Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
@@ -74,7 +74,6 @@ colorscheme solarized
 set ruler
 set nowrap
 set smartindent
-set smarttab
 set shiftwidth=4
 set tabstop=4
 set expandtab

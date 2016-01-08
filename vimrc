@@ -76,7 +76,6 @@ colorscheme solarized
 set ruler
 set nowrap
 set smartindent
-set smarttab
 set shiftwidth=4
 set tabstop=4
 set expandtab
