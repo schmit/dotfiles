@@ -15,7 +15,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 
 " Adjust shiftwidth and expandtab heuristically
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
 
 " Add parentheses etc around text "
 Plug 'tpope/vim-surround'
@@ -73,12 +73,17 @@ colorscheme solarized
 
 set ruler
 set nowrap
+
 set smartindent
+set smarttab
 set shiftwidth=4
 set tabstop=4
 set expandtab
+
 set shiftround      " round indent to multiple of shiftwidth
 set autoindent
+
+set wildignorecase  " ignore case in commands
 
 set number
 set showcmd
@@ -109,9 +114,9 @@ set hlsearch
 " incrementally match search
 set incsearch
 
-" smart searching
+" ignore case when no uppercase
+set ignorecase
 set smartcase
-
 
 " automatically reload file that changed on disc
 set autoread
@@ -160,3 +165,5 @@ com! WP call WordProcessorMode()
 " Turn off smart indent for python
 au! FileType python setl nosmartindent
 
+" Set .tex to latex
+let g:tex_flavor = "latex"
