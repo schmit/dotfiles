@@ -59,6 +59,9 @@ call plug#end()
 let SuperTabDefaultCompletionType = "context"
 let g:jedi#popup_on_dot = 0  " disables the autocomplete to popup whenever you press .
 
+" ignore files in gitignore for ctrlp
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
 syntax on
 syntax enable
 
