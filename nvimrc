@@ -54,6 +54,9 @@ Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
 "Elm plugin "
 Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 
+"Elixir plugin "
+Plug 'elixir-lang/vim-elixir'
+
 call plug#end()
 
 let SuperTabDefaultCompletionType = "context"
