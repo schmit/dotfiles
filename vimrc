@@ -54,6 +54,10 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 "Elm plugin "
 Plugin 'lambdatoast/elm.vim'
 
+
+"Elixir plugin "
+Plugin 'elixir-lang/vim-elixir'
+
 call vundle#end()
 
 let SuperTabDefaultCompletionType = "context"
