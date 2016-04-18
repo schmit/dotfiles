@@ -1,6 +1,8 @@
 
 call plug#begin('~/.nvim/plugged')
 Plug 'gmarik/Vundle.vim'
+
+" Git integration
 Plug 'tpope/vim-fugitive'
 
 " Autocompleters "
@@ -8,7 +10,9 @@ Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
 
 " Status bar "
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 
 " Commenting"
 " use gcc to comment a line "
