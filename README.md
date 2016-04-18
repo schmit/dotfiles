@@ -34,6 +34,13 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
+Note, if fonts are not working properly, install powerline/fonts as follows
+```
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+```
+Then update the fonts in iTerm2 settings to Hack.
 
 ### Zsh
 
