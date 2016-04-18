@@ -11,7 +11,8 @@ Plugin 'ervandew/supertab'
 Plugin 'davidhalter/jedi-vim'
 
 " Status bar "
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Commenting"
 " use gcc to comment a line "
