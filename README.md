@@ -7,12 +7,25 @@ My humble dotfiles
 Setup homebrew:
 `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
+### Fonts
+
+Install powerline/fonts as follows
+```
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+```
+Then update the fonts in iTerm2 settings to Hack.
+
 ### Vim
 
 Install vim using brew:
 `brew install vim`
 
-First clone the Vundle repo:
+Currently, using Vundle to install repos.
+For a fresh install, could switch to vim-plug, see NeoVim
+
+First clone the Vundle repo: 
 `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 Then run `:BundleInstall` in vim to download packages.
@@ -34,13 +47,10 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-Note, if fonts are not working properly, install powerline/fonts as follows
+Then install all plugins using
 ```
-git clone https://github.com/powerline/fonts.git
-cd fonts
-./install.sh
+:PlugInstall
 ```
-Then update the fonts in iTerm2 settings to Hack.
 
 ### Zsh
 
