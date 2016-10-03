@@ -195,3 +195,7 @@ autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 " End remove whitespace
+
+" Exit terminal mode with escape
+:tnoremap <Esc> <C-\><C-n>
+
