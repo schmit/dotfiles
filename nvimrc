@@ -19,7 +19,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'tpope/vim-commentary'
 
 " Adjust shiftwidth and expandtab heuristically
-" Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 
 " Add parentheses etc around text "
 Plug 'tpope/vim-surround'
@@ -60,6 +60,9 @@ Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
 
 "Elixir plugin "
 Plug 'elixir-lang/vim-elixir'
+
+"Rust plugin "
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -198,4 +201,20 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 
 " Exit terminal mode with escape
 :tnoremap <Esc> <C-\><C-n>
+
+" Python identation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+" Web identation
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
 
