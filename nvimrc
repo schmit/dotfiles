@@ -53,7 +53,7 @@ Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'css'] }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 "Latex plugin "
-Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': 'tex' }
+Plug 'lervag/vimtex', { 'for': 'tex' }
 
 "Elm plugin "
 Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
@@ -63,6 +63,10 @@ Plug 'elixir-lang/vim-elixir'
 
 "Rust plugin "
 Plug 'rust-lang/rust.vim'
+
+"Clojure plugin "
+Plug 'tpope/vim-fireplace'
+Plug 'vim-scripts/paredit.vim'
 
 call plug#end()
 
@@ -74,6 +78,8 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 syntax on
 syntax enable
+
+let mapleader="," "Maps leader to , instead of \
 
 set modelines=0 " avoids exploit
 
@@ -191,6 +197,9 @@ set showbreak=↪
 function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
+
+" Use Ag instead of Ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 autocmd FileWritePre    * :call TrimWhiteSpace()
