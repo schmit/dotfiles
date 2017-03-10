@@ -68,6 +68,10 @@ Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fireplace'
 Plug 'vim-scripts/paredit.vim'
 
+"Vim Orgmode "
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
+
 call plug#end()
 
 let SuperTabDefaultCompletionType = "context"
