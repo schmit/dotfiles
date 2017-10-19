@@ -1,6 +1,6 @@
 
 call plug#begin('~/.nvim/plugged')
-Plug 'gmarik/Vundle.vim'
+" Plug 'gmarik/Vundle.vim'
 
 " Git integration
 Plug 'tpope/vim-fugitive'
@@ -38,13 +38,20 @@ Plug 'altercation/vim-colors-solarized'
 " Find files using Ctrl + p"
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Find files using fzf "
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+
 " Ack plugin for vim, search using :Ack <searchterm>, select result
 " and use O to open file at that line and close search window (or o to not
 " close search window"
 Plug 'mileszs/ack.vim'
 
-" Synax checking "
-Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'css'] }
+" Syntax checking "
+" Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'css'] }
+
+" Async syntax checking "
+Plug 'w0rp/ale'
 
 " Writing plugin "
 " Plug 'reedes/vim-pencil'
@@ -170,21 +177,6 @@ let g:vim_markdown_math=1
 " No folding in markdown
 let g:vim_markdown_folding_disabled=1
 
-" Setup writer mode using :WP
-func! WordProcessorMode()
-  setlocal formatoptions=1
-  setlocal noexpandtab
-  map j gj
-  map k gk
-  setlocal spell spelllang=en_us
-  set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
-  set complete+=s
-  set formatprg=par
-  setlocal wrap
-  setlocal linebreak
-endfu
-com! WP call WordProcessorMode()
-
 " Turn off smart indent for python
 au! FileType python setl nosmartindent
 
@@ -202,15 +194,15 @@ function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 
-" Use Ag instead of Ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
 nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 " End remove whitespace
+
+" Use Ag instead of Ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Exit terminal mode with escape
 :tnoremap <Esc> <C-\><C-n>
