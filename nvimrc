@@ -7,7 +7,9 @@ Plug 'tpope/vim-fugitive'
 
 " Autocompleters "
 Plug 'ervandew/supertab'
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
 
 " Status bar "
 Plug 'vim-airline/vim-airline'
@@ -41,6 +43,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Find files using fzf "
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+" Highlight whitespace "
+Plug 'ntpeters/vim-better-whitespace'
 
 " Ack plugin for vim, search using :Ack <searchterm>, select result
 " and use O to open file at that line and close search window (or o to not
@@ -75,9 +79,15 @@ Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fireplace'
 Plug 'vim-scripts/paredit.vim'
 
+"ReasonML plugin "
+Plug 'reasonml-editor/vim-reason-plus'
+
 "Vim Orgmode "
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
+
+" Send stuff to a repl "
+Plug 'jpalardy/vim-slime'
 
 call plug#end()
 
@@ -207,3 +217,6 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Exit terminal mode with escape
 :tnoremap <Esc> <C-\><C-n>
 
+" Set tmux as vim-slime default
+" let g:slime_target = "tmux"
+let g:slime_target = "neovim"
