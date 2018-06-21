@@ -59,6 +59,7 @@ Plug 'w0rp/ale'
 
 " Writing plugin "
 " Plug 'reedes/vim-pencil'
+Plug 'rhysd/vim-grammarous'
 
 "Markdown plugin "
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
