@@ -45,11 +45,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew osx z)
+plugins=(git brew osx z tmux)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export PATH="/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -88,3 +88,5 @@ DISABLE_UPDATE_PROMPT=true
 
 # Parse body.md and compile paper.tex
 alias compiletex="pandoc body.md -o body.tex; pdflatex paper.tex"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

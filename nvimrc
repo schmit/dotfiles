@@ -1,12 +1,10 @@
 
 call plug#begin('~/.nvim/plugged')
-" Plug 'gmarik/Vundle.vim'
-
 " Git integration
 Plug 'tpope/vim-fugitive'
 
 " Autocompleters "
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 " Plug 'davidhalter/jedi-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
@@ -14,7 +12,7 @@ Plug 'zchee/deoplete-jedi'
 " Status bar "
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
+" Plug 'edkolev/tmuxline.vim'
 
 " Commenting"
 " use gcc to comment a line "
@@ -34,8 +32,6 @@ Plug 'nelstrom/vim-visual-star-search'
 
 " Solarized theme
 Plug 'altercation/vim-colors-solarized'
-" Tomorrow night theme
-" Plug 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " Find files using Ctrl + p"
 Plug 'ctrlpvim/ctrlp.vim'
@@ -51,15 +47,11 @@ Plug 'ntpeters/vim-better-whitespace'
 " close search window"
 Plug 'mileszs/ack.vim'
 
-" Syntax checking "
-" Plug 'scrooloose/syntastic', { 'for' : ['python', 'javascript', 'css'] }
-
 " Async syntax checking "
 Plug 'w0rp/ale'
 
 " Writing plugin "
 " Plug 'reedes/vim-pencil'
-Plug 'rhysd/vim-grammarous'
 
 "Markdown plugin "
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
@@ -67,25 +59,9 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 "Latex plugin "
 Plug 'lervag/vimtex', { 'for': 'tex' }
 
-"Elm plugin "
-Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
-
-"Elixir plugin "
-Plug 'elixir-lang/vim-elixir'
-
-"Rust plugin "
-Plug 'rust-lang/rust.vim'
-
 "Clojure plugin "
 Plug 'tpope/vim-fireplace'
 Plug 'vim-scripts/paredit.vim'
-
-"ReasonML plugin "
-Plug 'reasonml-editor/vim-reason-plus'
-
-"Vim Orgmode "
-Plug 'jceb/vim-orgmode'
-Plug 'tpope/vim-speeddating'
 
 " Send stuff to a repl "
 Plug 'jpalardy/vim-slime'
@@ -110,7 +86,6 @@ set ttimeoutlen=50
 
 set background=dark
 colorscheme solarized
-" colorscheme Tomorrow-Night
 
 set ruler
 set nowrap
@@ -133,9 +108,13 @@ set showmode
 set ttyfast
 set visualbell
 
+" no backups
 set noswapfile
 set nobackup
 set nowb
+
+" Show tabs and trailing spaces "
+set list listchars=tab:→\ ,trail:·
 
 " reload files when changed on disk
 set autoread
@@ -221,3 +200,23 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Set tmux as vim-slime default
 " let g:slime_target = "tmux"
 let g:slime_target = "neovim"
+
+" Allow the use of 256 colors in the terminal "
+set t_Co=256
+
+" start deoplete at startup
+let g:deoplete#enable_at_startup = 1
+"
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+set completeopt-=preview
+
+" omnifuncs
+" augroup omnifuncs
+"   autocmd!
+"   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" augroup end
