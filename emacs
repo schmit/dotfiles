@@ -115,6 +115,16 @@
   :ensure t)
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; COMMON LISP
+
+;; set up slime
+(use-package slime
+  :ensure t
+  :config
+  (progn
+    (setq inferior-lisp-program "/usr/local/bin/sbcl")
+    (slime-setup)))
+
 
 ;;;;;;;;;;;;;;;;;;;;
 ;; CONFIGURATION  ;;
@@ -164,3 +174,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; move backups to special directory
+(setq backup-directory-alist
+  `(("." . ,(concat user-emacs-directory "backups"))))
