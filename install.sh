@@ -8,5 +8,6 @@ echo "Please manually install zshrc"
 cp nvimrc ~/.config/nvim/init.vim
 cp ackrc ~/.ackrc
 cp tmux.conf ~/.tmux.conf
+cp emacs ~/.emacs
 
 echo "Done"

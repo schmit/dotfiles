@@ -53,6 +53,8 @@ Plug 'w0rp/ale'
 " Writing plugin "
 " Plug 'reedes/vim-pencil'
 
+" YAPF plugin for python
+Plug 'mindriot101/vim-yapf'
 "Markdown plugin "
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
