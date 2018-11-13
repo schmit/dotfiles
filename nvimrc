@@ -63,6 +63,9 @@ Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'tpope/vim-fireplace'
 Plug 'vim-scripts/paredit.vim'
 
+" Go plugin "
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Send stuff to a repl "
 Plug 'jpalardy/vim-slime'
 
