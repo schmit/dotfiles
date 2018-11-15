@@ -33,14 +33,26 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; use helm-mini
-(global-set-key (kbd "C-x b") 'helm-mini)
+;; (global-set-key (kbd "C-x b") 'helm-mini)
 
 ;; use helm-kill-ring
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+;; (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
 ;; helm find-files
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
+
+;; Ace window to switch windows easily
+(use-package ace-window
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (global-set-key (kbd "M-o") 'ace-window)
+    (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+     ;;more info at https://github.com/abo-abo/ace-window
+    )
+  )
 
 ;; VIM
 
@@ -86,7 +98,7 @@
 (use-package projectile
   :ensure t
   :config
-  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-x p") 'projectile-command-map)
   (projectile-mode +1))
 
 (use-package helm-projectile
@@ -157,6 +169,7 @@
 ;; show line and column number
 (line-number-mode 1)
 (column-number-mode 1)
+(display-line-numbers-mode 1)
 
 ;; Disable splash screen
 (setq inhibit-splash-screen t)
@@ -178,3 +191,16 @@
 ;; move backups to special directory
 (setq backup-directory-alist
   `(("." . ,(concat user-emacs-directory "backups"))))
+
+;; Highlight matching parentheses
+(setq show-paren-delay 0)
+(show-paren-mode 1)
+
+;; Wind move: use shift+arrow to change windows
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))
+
+;; Hide menu bar, tool bar and scroll bar
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
