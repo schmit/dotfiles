@@ -169,7 +169,7 @@
 ;; show line and column number
 (line-number-mode 1)
 (column-number-mode 1)
-(display-line-numbers-mode 1)
+(global-linum-mode t)
 
 ;; Disable splash screen
 (setq inhibit-splash-screen t)
