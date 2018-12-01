@@ -95,6 +95,7 @@
   :diminish paredit-mode
   :commands paredit-mode)
 
+;; Projectile
 (use-package projectile
   :ensure t
   :config
@@ -127,6 +128,8 @@
   :ensure t)
 (add-hook 'after-init-hook 'global-company-mode)
 
+
+
 ;; COMMON LISP
 
 ;; set up slime
@@ -136,6 +139,28 @@
   (progn
     (setq inferior-lisp-program "/usr/local/bin/sbcl")
     (slime-setup)))
+
+
+;; PYTHON
+
+;; autocompletion for Python using jedi
+(use-package company-jedi
+  :ensure t)
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
+(add-hook 'python-mode-hook 'jedi:setup)
+
+;; Use python3 interpreter
+(setq python-shell-interpreter "python3")
+(setq python-shell-completion-native-enable nil)
+
+;; auto-format using pep8
+(use-package py-autopep8
+  :ensure t)
+(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 
 
 ;;;;;;;;;;;;;;;;;;;;
