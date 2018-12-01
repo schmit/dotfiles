@@ -71,6 +71,9 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Send stuff to a repl "
 Plug 'jpalardy/vim-slime'
 
+" Use Vim Magit to deal with Git "
+Plug 'jreybert/vimagit'
+
 call plug#end()
 
 let SuperTabDefaultCompletionType = "context"
