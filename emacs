@@ -213,9 +213,12 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; move backups to special directory
-(setq backup-directory-alist
-  `(("." . ,(concat user-emacs-directory "backups"))))
+;; stop creating backup~ files
+(setq make-backup-files nil)
+;; stop creating #autosave# files
+(setq auto-save-default nil)
+;; disable lock files
+(setq create-lockfiles nil)
 
 ;; Highlight matching parentheses
 (setq show-paren-delay 0)
