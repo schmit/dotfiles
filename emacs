@@ -243,3 +243,31 @@
       kept-old-versions 2
       delete-old-versions t
       version-control t)
+
+
+;; SQL
+
+
+;;  SQL stuff This is mostly copy pasted from
+;;  https://truongtx.me/2014/08/23/setup-emacs-as-an-sql-database-client
+;;  requires installing java runtime and presto-cli
+;;  `sane-presto` and the presto stuf.
+(require 'sql)
+
+(add-hook 'sql-interactive-mode-hook
+          (lambda ()
+            (toggle-truncate-lines t)))
+
+(setq sql-send-terminator t)
+
+(load-file "~/.emacs.d/secrets.el")
+
+(defun sql-presto ()
+  "Connect to presto."
+  (interactive)
+  (let ((sql-product 'presto))
+    (sql-connect 'presto)))
+
+(defun sql-comint-presto (product options &optional buf-name)
+  (let ((sql-login-delay 0.9))
+    (sql-comint product options buf-name)))
