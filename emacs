@@ -149,19 +149,22 @@
 
 ;; PYTHON
 
-;; autocompletion for Python using jedi
-(use-package company-jedi
+(use-package elpy
 :ensure t)
-(defun my/python-mode-hook ()
-(add-to-list 'company-backends 'company-jedi))
-(add-hook 'python-mode-hook 'my/python-mode-hook)
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
-(add-hook 'python-mode-hook 'jedi:setup)
+(elpy-enable)
 
-;; Use python3 interpreter
-(setq python-shell-interpreter "python3")
-(setq python-shell-completion-native-enable nil)
+;; autocompletion for Python using jedi
+;; (use-package company-jedi
+;; :ensure t)
+;; (defun my/python-mode-hook ()
+;; (add-to-list 'company-backends 'company-jedi))
+;; (add-hook 'python-mode-hook 'my/python-mode-hook)
+;; (setq jedi:setup-keys t)
+;; (setq jedi:complete-on-dot t)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "-i")
 
 ;; auto-format using pep8
 (use-package py-autopep8
