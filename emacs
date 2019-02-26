@@ -129,6 +129,12 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 
+;; Powerline
+(use-package powerline
+  :ensure t)
+(powerline-default-theme)
+
+
 
 ;; COMMON LISP
 
