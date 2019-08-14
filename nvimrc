@@ -2,12 +2,17 @@
 call plug#begin('~/.nvim/plugged')
 " Git integration
 Plug 'tpope/vim-fugitive'
+Plug 'jreybert/vimagit'
 
 " Autocompleters "
 " Plug 'ervandew/supertab'
 " Plug 'davidhalter/jedi-vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'zchee/deoplete-jedi'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+
+" Async syntax checking "
+" Plug 'w0rp/ale'
 
 " Status bar "
 Plug 'vim-airline/vim-airline'
@@ -47,14 +52,9 @@ Plug 'ntpeters/vim-better-whitespace'
 " close search window"
 Plug 'mileszs/ack.vim'
 
-" Async syntax checking "
-Plug 'w0rp/ale'
-
 " Writing plugin "
 " Plug 'reedes/vim-pencil'
 
-" YAPF plugin for python
-Plug 'mindriot101/vim-yapf'
 "Markdown plugin "
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
@@ -73,10 +73,10 @@ Plug 'jpalardy/vim-slime'
 
 " In buffer repl "
 Plug 'metakirby5/codi.vim'
-call plug#end()
 
-let SuperTabDefaultCompletionType = "context"
-let g:jedi#popup_on_dot = 0  " disables the autocomplete to popup whenever you press .
+" Use black for Python formatting "
+Plug 'psf/black'
+call plug#end()
 
 " ignore files in gitignore for ctrlp
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -217,6 +217,10 @@ let g:deoplete#enable_at_startup = 1
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 set completeopt-=preview
+
+" Auto format using Black on save
+autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py 0,$!yapf
 
 " omnifuncs
 " augroup omnifuncs
