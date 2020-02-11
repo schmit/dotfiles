@@ -2,7 +2,7 @@
 call plug#begin('~/.nvim/plugged')
 " Git integration
 Plug 'tpope/vim-fugitive'
-Plug 'jreybert/vimagit'
+" Plug 'jreybert/vimagit'
 
 " Autocompleters "
 " Plug 'ervandew/supertab'
@@ -56,31 +56,35 @@ Plug 'mileszs/ack.vim'
 " Plug 'reedes/vim-pencil'
 
 "Markdown plugin "
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+" Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 "Latex plugin "
-Plug 'lervag/vimtex', { 'for': 'tex' }
+" Plug 'lervag/vimtex', { 'for': 'tex' }
 
 "Clojure plugin "
-Plug 'tpope/vim-fireplace'
-Plug 'vim-scripts/paredit.vim'
+" Plug 'tpope/vim-fireplace'
+" Plug 'vim-scripts/paredit.vim'
 
 " Go plugin "
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Send stuff to a repl "
-Plug 'jpalardy/vim-slime'
+" Plug 'jpalardy/vim-slime'
 
 " In buffer repl "
-Plug 'metakirby5/codi.vim'
+" Plug 'metakirby5/codi.vim'
 
 " Use black for Python formatting "
 Plug 'psf/black'
+
+" NerdTree
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " ignore files in gitignore for ctrlp
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
+let &t_Co=256
 syntax on
 syntax enable
 

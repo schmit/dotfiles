@@ -25,7 +25,7 @@ Install vim using brew:
 Currently, using Vundle to install repos.
 For a fresh install, could switch to vim-plug, see NeoVim
 
-First clone the Vundle repo: 
+First clone the Vundle repo:
 `git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 Then run `:BundleInstall` in vim to download packages.
@@ -52,10 +52,16 @@ Then install all plugins using
 :PlugInstall
 ```
 
-### Zsh
+### Fish
 
-Install Zshell using homebrew:
-`brew install zsh`
+Install Fish using homebrew
+`brew install fish`
+
+Install oh-my-fish`
+`curl -L https://get.oh-my.fish | fish`
+
+Install plugins
+`omf install git z fzf sushi`
 
 ### Tmux
 
