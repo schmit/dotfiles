@@ -17,18 +17,17 @@ cd fonts
 ```
 Then update the fonts in iTerm2 settings to Hack.
 
-### Vim
+### Utilities
 
-Install vim using brew:
-`brew install vim`
+`brew install git fzf`
 
-Currently, using Vundle to install repos.
-For a fresh install, could switch to vim-plug, see NeoVim
 
-First clone the Vundle repo:
-`git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+### Python
 
-Then run `:BundleInstall` in vim to download packages.
+`brew install python`
+`brew install pyenv`
+`brew install pyenv-virtualenv`
+
 
 ### Neovim
 
@@ -61,7 +60,7 @@ Install oh-my-fish`
 `curl -L https://get.oh-my.fish | fish`
 
 Install plugins
-`omf install git z fzf sushi`
+`omf install git z fzf sushi pyenv`
 
 ### Tmux
 
