@@ -9,7 +9,7 @@ Plug 'tpope/vim-fugitive'
 " Plug 'davidhalter/jedi-vim'
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'zchee/deoplete-jedi'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Async syntax checking "
 " Plug 'w0rp/ale'
@@ -75,10 +75,10 @@ Plug 'mileszs/ack.vim'
 " Plug 'metakirby5/codi.vim'
 
 " Use black for Python formatting "
-Plug 'psf/black'
+" Plug 'psf/black'
 
 " NerdTree
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " ignore files in gitignore for ctrlp
@@ -223,7 +223,7 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 set completeopt-=preview
 
 " Auto format using Black on save
-autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py execute ':Black'
 " autocmd BufWritePre *.py 0,$!yapf
 
 " omnifuncs
