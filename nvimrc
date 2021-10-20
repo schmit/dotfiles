@@ -35,8 +35,9 @@ Plug 'godlygeek/tabular'
 " Search by selecting text in visual mode and pressing * or #"
 Plug 'nelstrom/vim-visual-star-search'
 
-" Solarized theme
+" Themes
 Plug 'altercation/vim-colors-solarized'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " Find files using Ctrl + p"
 Plug 'ctrlpvim/ctrlp.vim'
@@ -96,7 +97,8 @@ set laststatus=2
 set ttimeoutlen=50
 
 set background=dark
-colorscheme solarized
+" can also use solarized
+colorscheme onehalfdark
 
 set ruler
 set nowrap
