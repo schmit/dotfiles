@@ -15,11 +15,14 @@ git clone https://github.com/powerline/fonts.git
 cd fonts
 ./install.sh
 ```
-Then update the fonts in iTerm2 settings to Hack.
 
 ### Utilities
 
 `brew install git fzf`
+`brew --cask install iterm2`
+`brew install tmux`
+
+Then update the fonts in iTerm2 settings to Hack.
 
 
 ### Python
@@ -32,7 +35,7 @@ Then update the fonts in iTerm2 settings to Hack.
 ### Neovim
 
 Install using brew:
-`brew install neovim/neovim/neovim`
+`brew install neovim`
 
 Update using
 ```
@@ -55,8 +58,9 @@ Then install all plugins using
 
 Install Fish using homebrew
 `brew install fish`
+and [set fish to the default shell](https://fishshell.com/docs/current/tutorial.html#switching-to-fish)
 
-Install oh-my-fish`
+Install [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 `curl -L https://get.oh-my.fish | fish`
 
 Install plugins
