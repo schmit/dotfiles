@@ -33,6 +33,11 @@ Then update the fonts in iTerm2 settings to Hack.
 Find the relevant python version, e.g. using
 `pyenv install --list | grep 3.10`
 `pyenv install 3.10.0`
+`pyenv global 3.10.0`
+
+#### Update pip
+`python -m pip install -U pip`
+
 
 ### Neovim
 
