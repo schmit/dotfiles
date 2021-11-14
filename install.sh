@@ -6,6 +6,5 @@ cp nvimrc ~/.config/nvim/init.vim
 cp ackrc ~/.ackrc
 cp tmux.conf ~/.tmux.conf
 cp emacs ~/.emacs
-cp config.fish ~/.config/fish/config.fish
 
 echo "Done"
