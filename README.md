@@ -39,6 +39,17 @@ Find the relevant python version, e.g. using
 `python -m pip install -U pip`
 
 
+#### Numpy, Scipy, Pandas and Jupyter
+
+First ensure that `gfortran` is installed:
+`brew install gfortran`
+
+Then use pyenv to create a virtual env
+`pyenv virtual 3.10.0 notebook`
+`pyenv activate notebook`
+`pip install numpy scipy pandas jupyterlab`
+
+
 ### Neovim
 
 Install using brew:
