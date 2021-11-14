@@ -30,6 +30,10 @@ Then update the fonts in iTerm2 settings to Hack.
 `brew install python`
 `brew install pyenv`
 `brew install pyenv-virtualenv`
+
+Note, for zsh might need to add
+`eval "$(pyenv init --path)"` to .zshrc
+
 Find the relevant python version, e.g. using
 `pyenv install --list | grep 3.10`
 `pyenv install 3.10.0`
