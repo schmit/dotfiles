@@ -19,7 +19,7 @@ cd fonts
 ### Utilities
 
 `brew install git fzf`
-`brew --cask install iterm2`
+`brew --cask install iterm2 firefox`
 `brew install tmux`
 
 Then update the fonts in iTerm2 settings to Hack.
@@ -30,7 +30,9 @@ Then update the fonts in iTerm2 settings to Hack.
 `brew install python`
 `brew install pyenv`
 `brew install pyenv-virtualenv`
-
+Find the relevant python version, e.g. using
+`pyenv install --list | grep 3.10`
+`pyenv install 3.10.0`
 
 ### Neovim
 
@@ -64,7 +66,7 @@ Install [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 `curl -L https://get.oh-my.fish | fish`
 
 Install plugins
-`omf install git z fzf sushi pyenv`
+`omf install git z fzf sashimi pyenv`
 
 ### Tmux
 

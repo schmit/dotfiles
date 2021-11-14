@@ -53,6 +53,10 @@ Plug 'ntpeters/vim-better-whitespace'
 " close search window"
 Plug 'mileszs/ack.vim'
 
+" Black plugin for formatting
+Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+
+
 " Writing plugin "
 " Plug 'reedes/vim-pencil'
 
@@ -74,9 +78,6 @@ Plug 'mileszs/ack.vim'
 
 " In buffer repl "
 " Plug 'metakirby5/codi.vim'
-
-" Use black for Python formatting "
-" Plug 'psf/black'
 
 " NerdTree
 " Plug 'scrooloose/nerdtree'
