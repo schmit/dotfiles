@@ -88,6 +88,9 @@ Install [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
 Install plugins
 `omf install git z fzf sashimi pyenv`
 
+Setup git shortcuts:
+`omf install https://github.com/jhillyerd/plugin-git`
+
 ### Tmux
 
 Install Tmux using homebrew:
