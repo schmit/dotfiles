@@ -27,7 +27,6 @@ vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
-
 -- Normal backspace
 vim.opt.backspace = { "indent", "eol", "start" }
 
@@ -40,9 +39,6 @@ vim.opt.clipboard = "unnamed"
 
 -- Set .tex to LaTeX
 vim.g.tex_flavor = "latex"
-
--- Remove Ex mode
-vim.keymap.set("n", "Q", "<nop>")
 
 -- Showbreak character
 vim.opt.showbreak = "↪"
