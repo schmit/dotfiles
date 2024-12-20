@@ -17,17 +17,11 @@ Setup homebrew:
 `brew --cask install iterm2 firefox`
 `brew install tmux`
 
-Then update the fonts in iTerm2 settings to Hack.
-
+Then update the fonts in iTerm2 settings to Hack: settings > profiles > text.
 
 ### Python
 
 `brew install uv`
-
-Note, for zsh might need to add
-`eval "$(pyenv init --path)"` to .zshrc
-
-
 
 #### Numpy, Scipy, Pandas and Jupyter
 
@@ -66,6 +60,7 @@ Install plugins
 
 Install Tmux using homebrew, along with some terminal tools
 `brew install tmux tree tldr`
+
 
 
 ### Ack
