@@ -9,12 +9,7 @@ Setup homebrew:
 
 ### Fonts
 
-Install powerline/fonts as follows
-```
-git clone https://github.com/powerline/fonts.git
-cd fonts
-./install.sh
-```
+`brew install font-hack-nerd-font`
 
 ### Utilities
 
@@ -22,36 +17,18 @@ cd fonts
 `brew --cask install iterm2 firefox`
 `brew install tmux`
 
-Then update the fonts in iTerm2 settings to Hack.
-
+Then update the fonts in iTerm2 settings to Hack: settings > profiles > text.
 
 ### Python
 
-`brew install python`
-`brew install pyenv`
-`brew install pyenv-virtualenv`
-
-Note, for zsh might need to add
-`eval "$(pyenv init --path)"` to .zshrc
-
-Find the relevant python version, e.g. using
-`pyenv install --list | grep 3.10`
-`pyenv install 3.10.0`
-`pyenv global 3.10.0`
-
-#### Update pip
-`python -m pip install -U pip`
-
+`brew install uv`
 
 #### Numpy, Scipy, Pandas and Jupyter
 
 First ensure that `gfortran` is installed:
 `brew install gfortran`
 
-Then use pyenv to create a virtual env
-`pyenv virtual 3.10.0 notebook`
-`pyenv activate notebook`
-`pip install numpy scipy pandas jupyterlab`
+Then use `uv` to set up relevant virtual environments
 
 
 ### Neovim
@@ -65,16 +42,7 @@ brew update
 brew upgrade neovim
 ```
 
-Instal vim-plug
-```
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```
-
-Then install all plugins using
-```
-:PlugInstall
-```
+Run the `install.sh` script to setup configuration using the [lazy package manager](https://lazy.folke.io/).
 
 ### Fish
 
@@ -93,13 +61,15 @@ Setup git shortcuts:
 
 ### Tmux
 
-Install Tmux using homebrew:
-`brew install tmux`
+Install Tmux using homebrew, along with some terminal tools
+`brew install tmux tree tldr`
+
+
 
 ### Ack
 
-Install Ack using homebrew:
-`brew install ack`
+Install Ag using homebrew:
+`brew install ag`
 
 ### Copy files to home directory
 
