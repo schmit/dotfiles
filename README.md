@@ -44,6 +44,10 @@ brew upgrade neovim
 
 Run the `install.sh` script to setup configuration using the [lazy package manager](https://lazy.folke.io/).
 
+Install `fd` for fuzzy file finding:
+`brew install fd`
+
+
 ### Fish
 
 Install Fish using homebrew
