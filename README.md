@@ -9,7 +9,11 @@ Setup homebrew:
 
 ### Fonts
 
+Install a font with glyphs:
+
 `brew install font-hack-nerd-font`
+
+or based on [Tide](https://github.com/IlanCosman/tide?tab=readme-ov-file#fonts) (see below)
 
 ### Utilities
 
@@ -47,6 +51,10 @@ Run the `install.sh` script to setup configuration using the [lazy package manag
 Install `fd` for fuzzy file finding:
 `brew install fd`
 
+### Tmux
+
+Install Tmux using homebrew, along with some terminal tools
+`brew install tmux tree tldr`
 
 ### Fish
 
@@ -61,28 +69,38 @@ and [set fish to the default shell](https://fishshell.com/docs/current/tutorial.
 Also point fish to brew:
 `fish_add_path /opt/homebrew/bin`
 
-#### Oh my fish
+#### Fisher
 
-Install [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish)
-`curl -L https://get.oh-my.fish | fish`
+Install [fisher](https://github.com/jorgebucaran/fisher)
 
-Install plugins
-`omf install z fzf sashimi pyenv`
+Install Tide:
+`fisher install IlanCosman/tide@v6`
 
-Setup git shortcuts:
-`omf install https://github.com/jhillyerd/plugin-git`
+Install z:
+`fisher install jethrokuan/z`
 
-### Tmux
-
-Install Tmux using homebrew, along with some terminal tools
-`brew install tmux tree tldr`
+See [Awsm Fish](https://github.com/jorgebucaran/awsm.fish) for more
 
 
+### Ripgrep
 
-### Ag
-
-Install Ag using homebrew:
+Install Ripgrep using homebrew:
 `brew install ag`
+
+
+### Node
+
+Install Fast Node Manager
+`brew install fnm`
+
+and configure it:
+`fnm env | source`
+
+Install latest node version:
+```
+fnm install --lts
+fnm default lts-latest
+```
 
 ### Copy files to home directory
 
