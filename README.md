@@ -79,6 +79,9 @@ Install Tide:
 Install z:
 `fisher install jethrokuan/z`
 
+Install fzf bindings:
+`fisher install PatrickF1/fzf.fish`
+
 See [Awsm Fish](https://github.com/jorgebucaran/awsm.fish) for more
 
 
