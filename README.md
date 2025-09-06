@@ -18,10 +18,8 @@ or based on [Tide](https://github.com/IlanCosman/tide?tab=readme-ov-file#fonts) 
 ### Utilities
 
 `brew install git jj fzf`
-`brew --cask install iterm2 firefox`
+`brew --cask install ghostty firefox`
 `brew install tmux`
-
-Then update the fonts in iTerm2 settings to Hack: settings > profiles > text.
 
 ### Python
 
