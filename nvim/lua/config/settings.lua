@@ -45,8 +45,5 @@ vim.g.tex_flavor = "latex"
 -- Showbreak character
 vim.opt.showbreak = "↪"
 
--- Use Ag instead of Ack
--- Prefer ripgrep via Telescope; no ack/ag integration
-
 -- Exit terminal mode with escape
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
