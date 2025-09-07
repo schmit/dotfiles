@@ -14,6 +14,7 @@ return {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "j-hui/fidget.nvim",
+    "rafamadriz/friendly-snippets",
   },
   config = function()
     local cmp_lsp = require("cmp_nvim_lsp")
@@ -24,23 +25,39 @@ return {
       cmp_lsp.default_capabilities()
     )
 
+    local function on_attach(_, bufnr)
+      local opts = { buffer = bufnr, noremap = true, silent = true }
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+      vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+      vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+      vim.keymap.set('n', '<leader>fd', function()
+        vim.diagnostic.open_float(nil, { focus = false })
+      end, opts)
+    end
+
     require("fidget").setup({})
     require("mason").setup()
 
     require('mason-lspconfig').setup({
       ensure_installed = {
         "lua_ls",
-        "ruff"
+        "ruff",
       },
       handlers = {
         function(server_name)
           require('lspconfig')[server_name].setup({
             capabilities = capabilities,
+            on_attach = on_attach,
           })
         end,
         lua_ls = function()
           require('lspconfig').lua_ls.setup({
             capabilities = capabilities,
+            on_attach = on_attach,
             settings = {
               Lua = {
                 runtime = {
@@ -61,11 +78,12 @@ return {
       }
     })
 
+    -- Ruff will be set up by mason-lspconfig handler above
+
     local cmp = require('cmp')
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
-    -- this is the function that loads the extra snippets to luasnip
-    -- from rafamadriz/friendly-snippets
+    -- Load extra snippets from rafamadriz/friendly-snippets
     require('luasnip.loaders.from_vscode').lazy_load()
 
     cmp.setup({
