@@ -47,3 +47,4 @@ vim.opt.showbreak = "↪"
 
 -- Exit terminal mode with escape
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+

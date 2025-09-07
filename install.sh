@@ -1,10 +1,6 @@
 #!/bin/bash
-echo "Installing config files in home directory"
+set -euo pipefail
 
-# note nvim config file is not nvimrc
-cp -R nvim ~/.config/
-cp -R ghostty ~/.config/
-cp tmux.conf ~/.tmux.conf
-cp emacs ~/.emacs
-
-echo "Done"
+echo "This repository is now managed with chezmoi."
+echo "Use:\n  brew install chezmoi\n  chezmoi init --source=\"$(pwd)\" --apply"
+exit 1

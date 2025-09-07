@@ -1,0 +1,7 @@
+# Ignore repository/development files that should not be applied to $HOME
+.git/
+.jj/
+.vscode/
+README.md
+install.sh
+
