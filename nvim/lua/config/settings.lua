@@ -1,5 +1,5 @@
-vim.opt.background = "light"
-vim.cmd.colorscheme("tokyonight-night")
+-- Truecolor and theme handled by plugin config
+vim.opt.termguicolors = true
 vim.opt.ruler = true
 
 vim.opt.smartindent = true
@@ -16,7 +16,8 @@ vim.opt.wildignorecase = true
 -- Line Numbers
 vim.opt.number = true
 vim.opt.showcmd = true
-vim.opt.showmode = true
+-- Statusline shows mode; no need to echo it
+vim.opt.showmode = false
 
 -- Automatically reload files changed on disk
 vim.opt.autoread = true
@@ -34,7 +35,8 @@ vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.mouse = "a"
 
 -- Copy-paste to OSX
-vim.opt.clipboard = "unnamed"
+-- Use system clipboard (macOS/Linux Wayland/X11 with providers)
+vim.opt.clipboard = "unnamedplus"
 
 
 -- Set .tex to LaTeX
@@ -44,8 +46,7 @@ vim.g.tex_flavor = "latex"
 vim.opt.showbreak = "↪"
 
 -- Use Ag instead of Ack
-vim.g.ackprg = "ag --nogroup --nocolor --column"
+-- Prefer ripgrep via Telescope; no ack/ag integration
 
 -- Exit terminal mode with escape
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
-
