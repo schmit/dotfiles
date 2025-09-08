@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Only run on macOS
+if [ "{{ .chezmoi.os }}" != "darwin" ]; then
+  echo "Skipping brew setup on non-macOS ({{ .chezmoi.os }})"
+  exit 0
+fi
+
+echo "[brew] Ensuring Homebrew is installed and up to date"
+if ! command -v brew >/dev/null 2>&1; then
+  echo "[brew] Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # Add brew to PATH for this session
+  if [ -d /opt/homebrew/bin ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [ -d /usr/local/bin ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
+fi
+
+brew update
+
+echo "[brew] Tapping casks and fonts"
+brew tap homebrew/cask || true
+brew tap homebrew/cask-fonts || true
+
+install_formula() {
+  local name="$1"
+  if brew list --formula --versions "$name" >/dev/null 2>&1; then
+    echo "[brew] ✓ $name already installed"
+  else
+    echo "[brew] Installing formula: $name"
+    brew install "$name"
+  fi
+}
+
+install_cask() {
+  local name="$1"
+  if brew list --cask --versions "$name" >/dev/null 2>&1; then
+    echo "[brew] ✓ $name (cask) already installed"
+  else
+    echo "[brew] Installing cask: $name"
+    brew install --cask "$name"
+  fi
+}
+
+echo "[brew] Installing core CLI tools"
+install_formula git
+install_formula fzf
+install_formula tmux
+install_formula tree
+install_formula tldr
+install_formula ripgrep
+install_formula the_silver_searcher
+install_formula fd
+
+echo "[brew] Installing Jujutsu (jj)"
+if ! command -v jj >/dev/null 2>&1; then
+  # Try canonical formula name first
+  install_formula jujutsu || install_formula jj || true
+else
+  echo "[brew] ✓ jj already available"
+fi
+
+echo "[brew] Installing Python tooling"
+install_formula uv
+install_formula gfortran
+
+echo "[brew] Installing Neovim"
+install_formula neovim
+
+echo "[brew] Installing Fish shell"
+install_formula fish
+
+echo "[brew] Installing apps and fonts"
+install_cask ghostty
+install_cask firefox
+install_cask font-hack-nerd-font
+
+echo "[brew] Installing Node via fnm and setting LTS default"
+install_formula fnm
+if command -v fnm >/dev/null 2>&1; then
+  # Initialize fnm in this shell and install LTS
+  eval "$(fnm env --shell bash)"
+  fnm install --lts || true
+  fnm default lts-latest || true
+fi
+
+echo "[brew] Setup complete"
+

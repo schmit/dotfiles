@@ -2,10 +2,35 @@
 
 My humble dotfiles
 
+## Using chezmoi (recommended)
+
+This repo is organized as a chezmoi source. To apply:
+
+1) Install chezmoi: `brew install chezmoi`
+
+2) From this directory, initialize and apply:
+
+```
+chezmoi init --source="$(pwd)" --apply
+```
+
+What gets installed:
+- `~/.tmux.conf` from `dot_tmux.conf`
+- `~/.emacs` from `dot_emacs`
+- `~/.config/nvim/**` from `dot_config/nvim/**`
+- `~/.config/ghostty/config` from `dot_config/ghostty/config`
+- `~/.config/fish/**` from `dot_config/fish/**`
+
+Bootstrap: On first apply, chezmoi runs `run_once_*` scripts to install Homebrew & common tools and set Fish as the default shell on macOS.
+
+Note: Repo/development files like `.vscode/`, `.jj/`, and `README.md` are ignored via `.chezmoiignore`.
+
 # Setup
 
-Setup homebrew:
-`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+Setup Homebrew (if needed):
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 ### Fonts
 
@@ -44,7 +69,7 @@ brew update
 brew upgrade neovim
 ```
 
-Run the `install.sh` script to setup configuration using the [lazy package manager](https://lazy.folke.io/).
+Configuration is managed by chezmoi in `~/.config/nvim` and uses the [lazy](https://lazy.folke.io/) plugin manager.
 
 Install `fd` for fuzzy file finding:
 `brew install fd`
@@ -67,6 +92,8 @@ and [set fish to the default shell](https://fishshell.com/docs/current/tutorial.
 Also point fish to brew:
 `fish_add_path /opt/homebrew/bin`
 
+Note: If you applied via chezmoi, a `run_once_20-fish-defaults.sh.tmpl` takes care of adding Fish to `/etc/shells` and setting it as the default shell (you may be prompted for your password). A Fish `conf.d` snippet also adds Homebrew to your PATH and initializes `fnm`.
+
 #### Fisher
 
 Install [fisher](https://github.com/jorgebucaran/fisher)
@@ -86,7 +113,7 @@ See [Awsm Fish](https://github.com/jorgebucaran/awsm.fish) for more
 ### Ripgrep
 
 Install Ripgrep using homebrew:
-`brew install ag`
+`brew install ripgrep`
 
 
 ### Node
@@ -101,11 +128,4 @@ Install latest node version:
 ```
 fnm install --lts
 fnm default lts-latest
-```
-
-### Copy files to home directory
-
-```
-chmod +x install.sh
-./install.sh
 ```

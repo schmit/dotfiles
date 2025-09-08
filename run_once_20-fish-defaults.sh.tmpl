@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Only run on macOS
+if [ "{{ .chezmoi.os }}" != "darwin" ]; then
+  echo "[fish] Skipping fish defaults on non-macOS ({{ .chezmoi.os }})"
+  exit 0
+fi
+
+if ! command -v fish >/dev/null 2>&1; then
+  echo "[fish] Fish is not installed; skipping default shell setup"
+  exit 0
+fi
+
+# Resolve fish path (prefer Homebrew path)
+FISH_BIN="$(command -v fish)"
+if [ -x /opt/homebrew/bin/fish ]; then
+  FISH_BIN="/opt/homebrew/bin/fish"
+elif [ -x /usr/local/bin/fish ]; then
+  FISH_BIN="/usr/local/bin/fish"
+fi
+
+echo "[fish] Ensuring $FISH_BIN is listed in /etc/shells"
+if ! grep -qx "$FISH_BIN" /etc/shells; then
+  echo "[fish] Adding $FISH_BIN to /etc/shells (requires sudo)"
+  sudo sh -c "echo '$FISH_BIN' >> /etc/shells"
+else
+  echo "[fish] ✓ Already present in /etc/shells"
+fi
+
+# Determine current login shell (macOS prefers dscl)
+CURRENT_SHELL="$(dscl . -read "$HOME" UserShell 2>/dev/null | awk '{print $2}' || echo "${SHELL:-}")"
+if [ "$CURRENT_SHELL" = "$FISH_BIN" ]; then
+  echo "[fish] ✓ Fish is already the default shell"
+else
+  echo "[fish] Changing default shell to $FISH_BIN (you may be prompted for password)"
+  chsh -s "$FISH_BIN" || {
+    echo "[fish] chsh failed; you can run: chsh -s $FISH_BIN" >&2
+  }
+fi
+
+echo "[fish] Default shell setup complete. Open a new terminal to use fish."
+
